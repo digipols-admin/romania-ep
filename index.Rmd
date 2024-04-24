@@ -8,8 +8,7 @@ You should have received an Excel file for coding the parties. Please make sure 
 
 How to use this web resource:
 
-*Phase 1: Party coding* 
-View the  [coding instructions](https://digipols-admin.io/romania-ep/information.html){target="_blank"} before starting the party coding process. **Important:** although these instructions are in English, you should write your justifications in your local language, there is no need to write in English.
+*Phase 1: Party coding*: View the  [coding instructions](https://digipols-admin.github.io/romania-ep/instructions.html){target="_blank"} before starting the party coding process. **Important:** although these instructions are in English, you should write your justifications in your local language, there is no need to write in English.
 
-*Phase 2: First round of party coding*: The [coding results](https://digipols-admin.io/romania-ep/results1.html){target="_blank"} of the first round will only be enabled in phase 2, i.e. when the first round results are delivered. It will contains the aggreagted codes for all the parties that have been coded. The data is anonymised, so other coders can only see anonymised estimates of party positions  estimates of party positions. 
+*Phase 2: Results of the first round of party coding*: The [coding results](https://digipols-admin.github.io/romania-ep/results1.html){target="_blank"} of the first round will only be enabled in phase 2, i.e. when the first round results are delivered. It will contains the aggreagted codes for all the parties that have been coded. The data is anonymised, so other coders can only see anonymised estimates of party positions  estimates of party positions. 
 
