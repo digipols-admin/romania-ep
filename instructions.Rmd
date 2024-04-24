@@ -1,4 +1,7 @@
-# Instructions on the Coding Method
+---
+title: "Instructions on the Coding Method"
+---
+
 
 ### 1. The Aim of the Coding Exercise
 
@@ -38,7 +41,9 @@ iii) Use "Not at all confident" if no direct confirmatory evidence is available 
 
 ### 4. Instructions on the "Source" Column
 
-You are expected to provide detailed information concerning the document or source on the basis of which you estimated the party's position.
+You are expected to provide detailed information concerning the document or source on the basis of which you estimated the party's position. 
+
+**Important** It may be the case that you have multiple sources. For instance a fictitious URL like this, www.source1.com. If you have multiple sources use a delimiter like this semi colon ";". To cite 3 fictitious sources you could do this: www.source1.com; www.source2.com; www.source3.com
 
 ### 5. Instructions on the "Justification" Column
 
