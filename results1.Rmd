@@ -4,10 +4,19 @@ editor_options:
   chunk_output_type: console
 ---
 
-This web section will be enabled once the first round data is delivered!
+This web section contains the results from the first round of coding.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+Each party is listed below. You can drill into each code by starting with the ID column and clicking on a policy item. This will reveal the coders' estimates of the party's position. By clikcing on the Coder column, you will get more detailed information from the individual coder.
 
+**NOTE** A couple of cells seems to be out of sync. Specifically, for the following party X coder combinations: 
+
+- PSD = coder 10 
+
+- UDMR = coder 4
+
+- USR = coder 4
+
+<br>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -25,24 +34,11 @@ library(DT)
 library(reactable)
 library(htmltools)
 
-# Load the data frame
+# df <- df %>% 
+#   select(-c(party,Dimensiune)) %>% 
+#   unite("id", c(ID,Item),sep = ") ") %>% 
+#   relocate(coder, .before = `Sursa`)
 
-# Load drafts
-load(here("data/round_01/df.rda"))
-
-# Temp testing
-df <- df %>% 
-  mutate(coder = ifelse(coder=="c5" & party=="PMP","c6",df$coder)) %>% 
-  select(-c(party,Dimensiune)) %>% 
-  unite("id", c(ID,Item),sep = ") ") %>% 
-  relocate(coder, .before = `Sursa`)
-
-```
-
-
-## Testing party X
-
-```{r}
 
 # df %>% 
 #   reactable(groupBy = "id",
@@ -57,8 +53,14 @@ df <- df %>%
 ```
 
 
+## AUR
+
 ```{r}
 # Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/AUR/df.rda"))
+
 reactable(df, columns = list(
   id = colDef(name = "ID", minWidth = 250),
   coder = colDef(name = "Coder", details = function(index) {
@@ -83,11 +85,14 @@ reactable(df, columns = list(
 
 <br>
 
-## Testing Party Y
+## PMP
 
 ```{r}
-
 # Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/PMP/df.rda"))
+
 reactable(df, columns = list(
   id = colDef(name = "ID", minWidth = 250),
   coder = colDef(name = "Coder", details = function(index) {
@@ -112,4 +117,162 @@ reactable(df, columns = list(
 
 <br>
 
-## Testing Party Z
+## PNL
+
+```{r}
+# Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/PNL/df.rda"))
+
+reactable(df, columns = list(
+  id = colDef(name = "ID", minWidth = 250),
+  coder = colDef(name = "Coder", details = function(index) {
+    # Extract the sub-data for the expanded row
+    sub_data <- df[index, c("Sursa", "Justificarea", "Comentarii")]
+    # Create a mini reactable for nested display
+    div(style = "padding: 16px; margin-top: -10px; margin-bottom: -10px;",
+        reactable(sub_data, bordered = TRUE, compact = TRUE))
+  }),
+  #`Poziția partidului` = colDef(show = FALSE),
+  #`Nivel de încredere` = colDef(show = FALSE),
+  Sursa = colDef(show = FALSE),
+  Justificarea = colDef(show = FALSE),
+  Comentarii = colDef(show = FALSE)
+), defaultColDef = colDef(minWidth = 150, cell = function(value) {
+  # Style for other columns
+  span(style = "display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", value)
+}), groupBy = "id", pagination = FALSE)
+
+```
+
+
+<br>
+
+## PSD
+
+```{r}
+# Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/PSD/df.rda"))
+
+reactable(df, columns = list(
+  id = colDef(name = "ID", minWidth = 250),
+  coder = colDef(name = "Coder", details = function(index) {
+    # Extract the sub-data for the expanded row
+    sub_data <- df[index, c("Sursa", "Justificarea", "Comentarii")]
+    # Create a mini reactable for nested display
+    div(style = "padding: 16px; margin-top: -10px; margin-bottom: -10px;",
+        reactable(sub_data, bordered = TRUE, compact = TRUE))
+  }),
+  #`Poziția partidului` = colDef(show = FALSE),
+  #`Nivel de încredere` = colDef(show = FALSE),
+  Sursa = colDef(show = FALSE),
+  Justificarea = colDef(show = FALSE),
+  Comentarii = colDef(show = FALSE)
+), defaultColDef = colDef(minWidth = 150, cell = function(value) {
+  # Style for other columns
+  span(style = "display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", value)
+}), groupBy = "id", pagination = FALSE)
+
+```
+
+
+<br>
+
+## REPER
+
+```{r}
+# Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/REPER/df.rda"))
+
+reactable(df, columns = list(
+  id = colDef(name = "ID", minWidth = 250),
+  coder = colDef(name = "Coder", details = function(index) {
+    # Extract the sub-data for the expanded row
+    sub_data <- df[index, c("Sursa", "Justificarea", "Comentarii")]
+    # Create a mini reactable for nested display
+    div(style = "padding: 16px; margin-top: -10px; margin-bottom: -10px;",
+        reactable(sub_data, bordered = TRUE, compact = TRUE))
+  }),
+  #`Poziția partidului` = colDef(show = FALSE),
+  #`Nivel de încredere` = colDef(show = FALSE),
+  Sursa = colDef(show = FALSE),
+  Justificarea = colDef(show = FALSE),
+  Comentarii = colDef(show = FALSE)
+), defaultColDef = colDef(minWidth = 150, cell = function(value) {
+  # Style for other columns
+  span(style = "display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", value)
+}), groupBy = "id", pagination = FALSE)
+
+```
+
+
+<br>
+
+## UDMR
+
+```{r}
+# Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/UDMR/df.rda"))
+
+reactable(df, columns = list(
+  id = colDef(name = "ID", minWidth = 250),
+  coder = colDef(name = "Coder", details = function(index) {
+    # Extract the sub-data for the expanded row
+    sub_data <- df[index, c("Sursa", "Justificarea", "Comentarii")]
+    # Create a mini reactable for nested display
+    div(style = "padding: 16px; margin-top: -10px; margin-bottom: -10px;",
+        reactable(sub_data, bordered = TRUE, compact = TRUE))
+  }),
+  #`Poziția partidului` = colDef(show = FALSE),
+  #`Nivel de încredere` = colDef(show = FALSE),
+  Sursa = colDef(show = FALSE),
+  Justificarea = colDef(show = FALSE),
+  Comentarii = colDef(show = FALSE)
+), defaultColDef = colDef(minWidth = 150, cell = function(value) {
+  # Style for other columns
+  span(style = "display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", value)
+}), groupBy = "id", pagination = FALSE)
+
+```
+
+
+<br>
+
+## USR
+
+```{r}
+# Load the data frame (assuming df is loaded and has the described structure)
+
+# Load drafts
+load(here("data/USR/df.rda"))
+
+reactable(df, columns = list(
+  id = colDef(name = "ID", minWidth = 250),
+  coder = colDef(name = "Coder", details = function(index) {
+    # Extract the sub-data for the expanded row
+    sub_data <- df[index, c("Sursa", "Justificarea", "Comentarii")]
+    # Create a mini reactable for nested display
+    div(style = "padding: 16px; margin-top: -10px; margin-bottom: -10px;",
+        reactable(sub_data, bordered = TRUE, compact = TRUE))
+  }),
+  #`Poziția partidului` = colDef(show = FALSE),
+  #`Nivel de încredere` = colDef(show = FALSE),
+  Sursa = colDef(show = FALSE),
+  Justificarea = colDef(show = FALSE),
+  Comentarii = colDef(show = FALSE)
+), defaultColDef = colDef(minWidth = 150, cell = function(value) {
+  # Style for other columns
+  span(style = "display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;", value)
+}), groupBy = "id", pagination = FALSE)
+
+```
+
+
+<br>
