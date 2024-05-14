@@ -3,12 +3,12 @@
 # 2) process them 
 # 3) saves them into party folders
 
-library(dplyr)
+library(tidyverse)
 library(googledrive)
-library(purrr)
+#library(purrr)
 library(readxl)
-library(stringr)
-library(tidyr)
+#library(stringr)
+#library(tidyr)
 library(here)
 
 # Get the list of folder ids and names
