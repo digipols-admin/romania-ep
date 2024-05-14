@@ -8,13 +8,8 @@ This web section contains the results from the first round of coding.
 
 Each party is listed below. You can drill into each code by starting with the ID column and clicking on a policy item. This will reveal the coders' estimates of the party's position. By clikcing on the Coder column, you will get more detailed information from the individual coder.
 
-**NOTE** A couple of cells seems to be out of sync. Specifically, for the following party X coder combinations: 
+**NOTE** Some cells for `PSD = coder 10 ` seems to be out of sync, suggesting an Excel error. However, this doesn't seem to matter. 
 
-- PSD = coder 10 
-
-- UDMR = coder 4
-
-- USR = coder 4
 
 <br>
 
