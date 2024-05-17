@@ -8,4 +8,6 @@ navbar:
       href: instructions.html
     - text: "Coding results"
       href: results1.html
+    - text: "Coding results 2"
+      href: results2.html
 output_dir: "docs"
